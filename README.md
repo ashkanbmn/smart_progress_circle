@@ -12,6 +12,10 @@ The Circular Progress Bar Flutter Plugin is a customizable widget that displays 
 - **Responsive Design**: Automatically adjusts to different screen sizes and orientations.
 - **Default Styling**: Comes with sensible defaults that can be easily overridden.
 
+
+![Screenshot 2024-10-23 173828](https://github.com/user-attachments/assets/341e69d5-2999-4402-8a56-d13541b76a1c)
+
+
 ## Installation
 
 To use the Circular Progress Bar plugin in your Flutter project, follow these steps:
