@@ -71,7 +71,10 @@ class MyApp extends StatelessWidget {
             buttonColor: Colors.green,
             buttonTextColor: Colors.white,
             cancelButtonColor: Colors.red,
-            cancelButtonTextColor: Colors.white,
+            cancelButtonTextColor: Colors.white, 
+            onChanged: (value) {
+             print("Current value is: $value");
+            }
           ),
         ),
       ),
