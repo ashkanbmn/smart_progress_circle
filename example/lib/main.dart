@@ -5,7 +5,6 @@ void main() {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -18,17 +17,19 @@ class MyApp extends StatelessWidget {
           title: const Text('Smart Progress Circle'),
           centerTitle: true,
         ),
-        body: const Center(
+        body: Center(
           child: CircularProgressBar(
-            minValue: 0,
-            maxValue: 10,
-            initialValue: 0,
-            icon: Icon(
-              Icons.speed,
-              color: Colors.red,
-            ),
-            calculationCriteria: 'Speed',
-          ),
+              minValue: 0,
+              maxValue: 10,
+              initialValue: 0,
+              icon: const Icon(
+                Icons.speed,
+                color: Colors.red,
+              ),
+              calculationCriteria: 'Speed',
+              onChanged: (value) {
+                print("Current value is: $value");
+              }),
         ),
       ),
     );

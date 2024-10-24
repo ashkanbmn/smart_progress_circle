@@ -22,6 +22,9 @@ class CircularProgressBar extends StatefulWidget {
   final Color? cancelButtonColor;
   final Color? cancelButtonTextColor;
 
+  // Add the onChanged parameter
+  final void Function(double)? onChanged;
+
   const CircularProgressBar({
     Key? key,
     required this.minValue,
@@ -40,6 +43,7 @@ class CircularProgressBar extends StatefulWidget {
     this.buttonTextColor,
     this.cancelButtonColor,
     this.cancelButtonTextColor,
+    this.onChanged, // Initialize the new parameter
   }) : super(key: key);
 
   @override
@@ -47,12 +51,25 @@ class CircularProgressBar extends StatefulWidget {
 }
 
 class _CircularProgressBarState extends State<CircularProgressBar> {
-  late double currentValue;
+  late double _currentValue;
 
   @override
   void initState() {
     super.initState();
-    currentValue = widget.initialValue.clamp(widget.minValue, widget.maxValue);
+    _currentValue = widget.initialValue.clamp(widget.minValue, widget.maxValue);
+  }
+
+  double get currentValue => _currentValue;
+
+  set currentValue(double value) {
+    if (_currentValue != value) {
+      setState(() {
+        _currentValue = value;
+        if (widget.onChanged != null) {
+          widget.onChanged!(_currentValue);
+        }
+      });
+    }
   }
 
   double _getProgressPercentage(double value) {
@@ -79,9 +96,7 @@ class _CircularProgressBarState extends State<CircularProgressBar> {
     double value = widget.minValue + progress * (widget.maxValue - widget.minValue);
     value = value.clamp(widget.minValue, widget.maxValue);
 
-    setState(() {
-      currentValue = value;
-    });
+    currentValue = value; // Use the setter to update the value
   }
 
   void _showInputDialog() {
@@ -125,9 +140,7 @@ class _CircularProgressBarState extends State<CircularProgressBar> {
                 onPressed: () {
                   double? newValue = double.tryParse(controller.text);
                   if (newValue != null) {
-                    setState(() {
-                      currentValue = newValue.clamp(widget.minValue, widget.maxValue);
-                    });
+                    currentValue = newValue.clamp(widget.minValue, widget.maxValue);
                   }
                   Navigator.of(context).pop(); // Close the dialog
                 },

@@ -82,24 +82,26 @@ class MyApp extends StatelessWidget {
 
 ### Parameters
 
-| Parameter                     | Type                | Description                                                                                       |
-|-------------------------------|---------------------|---------------------------------------------------------------------------------------------------|
-| `minValue`                   | `double`            | The minimum value of the progress bar.                                                           |
-| `maxValue`                   | `double`            | The maximum value of the progress bar.                                                           |
-| `initialValue`               | `double`            | The initial value displayed on the progress bar.                                                 |
-| `icon`                       | `Widget`            | An icon widget displayed at the center of the progress bar.                                      |
-| `calculationCriteria`        | `String`            | A string that describes what the progress bar represents.                                        |
-| `size`                       | `double` (optional) | The size of the circular progress bar. Defaults to `250.0`.                                      |
-| `backgroundColor`            | `Color` (optional)  | The background color of the progress bar. Defaults to light or dark theme color.                 |
-| `progressColor`              | `Color` (optional)  | The color of the progress arc. Defaults to a gradient of red.                                    |
-| `markColor`                  | `Color` (optional)  | The color of the marks around the progress bar. Defaults to light grey.                          |
-| `borderColor`                | `Color` (optional)  | The color of the border of the progress bar. Defaults to light or dark theme color.              |
-| `dialogBackgroundColor`      | `Color` (optional)  | The background color of the input dialog. Defaults to the scaffold background color.              |
-| `dialogTextColor`            | `Color` (optional)  | The text color in the input dialog. Defaults to black.                                           |
-| `buttonColor`                | `Color` (optional)  | The color of the OK button in the dialog. Defaults to red.                                       |
-| `buttonTextColor`            | `Color` (optional)  | The text color of the OK button. Defaults to white.                                             |
-| `cancelButtonColor`          | `Color` (optional)  | The color of the Cancel button in the dialog. Defaults to white.                                 |
-| `cancelButtonTextColor`      | `Color` (optional)  | The text color of the Cancel button. Defaults to red.                                           |
+| Parameter               | Type                | Description                                                                                       |
+|-------------------------|---------------------|---------------------------------------------------------------------------------------------------|
+| `minValue`              | `double`            | The minimum value of the progress bar.                                                           |
+| `maxValue`              | `double`            | The maximum value of the progress bar.                                                           |
+| `initialValue`          | `double`            | The initial value displayed on the progress bar.                                                 |
+| `icon`                  | `Widget`            | An icon widget displayed at the center of the progress bar.                                      |
+| `calculationCriteria`   | `String`            | A string that describes what the progress bar represents.                                        |
+| `size`                  | `double` (optional) | The size of the circular progress bar. Defaults to `250.0`.                                      |
+| `backgroundColor`       | `Color` (optional)  | The background color of the progress bar. Defaults to light or dark theme color.                 |
+| `progressColor`         | `Color` (optional)  | The color of the progress arc. Defaults to a gradient of red.                                    |
+| `markColor`             | `Color` (optional)  | The color of the marks around the progress bar. Defaults to light grey.                          |
+| `borderColor`           | `Color` (optional)  | The color of the border of the progress bar. Defaults to light or dark theme color.              |
+| `dialogBackgroundColor` | `Color` (optional)  | The background color of the input dialog. Defaults to the scaffold background color.              |
+| `dialogTextColor`       | `Color` (optional)  | The text color in the input dialog. Defaults to black.                                           |
+| `buttonColor`           | `Color` (optional)  | The color of the OK button in the dialog. Defaults to red.                                       |
+| `buttonTextColor`       | `Color` (optional)  | The text color of the OK button. Defaults to white.                                             |
+| `cancelButtonColor`     | `Color` (optional)  | The color of the Cancel button in the dialog. Defaults to white.                                 |
+| `cancelButtonTextColor` | `Color` (optional)  | The text color of the Cancel button. Defaults to red.                                           |
+| `onChanged`             | `void Function(double)?` (optional)  | This is a callback function that allows users to define custom behavior that should occur when the value changes.                                           |
+
 
 ## Customization
 
